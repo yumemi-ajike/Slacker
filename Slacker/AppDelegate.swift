@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
         window?.makeKeyAndVisible()
+        
+        let provider = MoyaProvider<Slack>()
+        provider.request(.chatPostMessage(
+            token: "<YOUR_ACCESS_TOKEN>",
+            channel: "channel_name",
+            text: "hello world!",
+            asUser: true)) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                let json = try! moyaResponse.mapJSON()
+                let statusCode = moyaResponse.statusCode
+                print("json: \(json), statusCode: \(statusCode)")
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
         return true
     }
 

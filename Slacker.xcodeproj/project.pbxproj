@@ -11,6 +11,11 @@
 		080D836520F9960B0010D99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080D836420F9960B0010D99E /* Assets.xcassets */; };
 		080D836820F9960B0010D99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080D836620F9960B0010D99E /* LaunchScreen.storyboard */; };
 		080D837320F9960B0010D99E /* SlackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D837220F9960B0010D99E /* SlackerTests.swift */; };
+		084D432C20F9FE5F00EDF003 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D432920F9FE5F00EDF003 /* Result.framework */; };
+		084D432D20F9FE5F00EDF003 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D432A20F9FE5F00EDF003 /* Moya.framework */; };
+		084D432E20F9FE5F00EDF003 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D432B20F9FE5F00EDF003 /* Alamofire.framework */; };
+		084D433020F9FF9000EDF003 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D432F20F9FF9000EDF003 /* Api.swift */; };
+		084D433320FA148300EDF003 /* chatPostMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 084D433220FA148300EDF003 /* chatPostMessage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,11 @@
 		080D836E20F9960B0010D99E /* SlackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		080D837220F9960B0010D99E /* SlackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackerTests.swift; sourceTree = "<group>"; };
 		080D837420F9960B0010D99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		084D432920F9FE5F00EDF003 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		084D432A20F9FE5F00EDF003 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		084D432B20F9FE5F00EDF003 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		084D432F20F9FF9000EDF003 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		084D433220FA148300EDF003 /* chatPostMessage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chatPostMessage.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084D432C20F9FE5F00EDF003 /* Result.framework in Frameworks */,
+				084D432D20F9FE5F00EDF003 /* Moya.framework in Frameworks */,
+				084D432E20F9FE5F00EDF003 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +71,7 @@
 				080D835C20F996090010D99E /* Slacker */,
 				080D837120F9960B0010D99E /* SlackerTests */,
 				080D835B20F996090010D99E /* Products */,
+				084D432820F9FE5F00EDF003 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				080D835D20F996090010D99E /* AppDelegate.swift */,
+				084D432F20F9FF9000EDF003 /* Api.swift */,
 				080D836420F9960B0010D99E /* Assets.xcassets */,
 				080D836620F9960B0010D99E /* LaunchScreen.storyboard */,
 				080D836920F9960B0010D99E /* Info.plist */,
+				084D433120FA144E00EDF003 /* SampleData */,
 			);
 			path = Slacker;
 			sourceTree = "<group>";
@@ -90,6 +106,24 @@
 			path = SlackerTests;
 			sourceTree = "<group>";
 		};
+		084D432820F9FE5F00EDF003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				084D432B20F9FE5F00EDF003 /* Alamofire.framework */,
+				084D432A20F9FE5F00EDF003 /* Moya.framework */,
+				084D432920F9FE5F00EDF003 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		084D433120FA144E00EDF003 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				084D433220FA148300EDF003 /* chatPostMessage.json */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,6 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 080D837720F9960B0010D99E /* Build configuration list for PBXNativeTarget "Slacker" */;
 			buildPhases = (
+				084D431620F9D67300EDF003 /* Carthage */,
 				080D835620F996090010D99E /* Sources */,
 				080D835720F996090010D99E /* Frameworks */,
 				080D835820F996090010D99E /* Resources */,
@@ -171,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084D433320FA148300EDF003 /* chatPostMessage.json in Resources */,
 				080D836820F9960B0010D99E /* LaunchScreen.storyboard in Resources */,
 				080D836520F9960B0010D99E /* Assets.xcassets in Resources */,
 			);
@@ -185,11 +221,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		084D431620F9D67300EDF003 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		080D835620F996090010D99E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084D433020F9FF9000EDF003 /* Api.swift in Sources */,
 				080D835E20F996090010D99E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +400,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Slacker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,6 +421,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Slacker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
