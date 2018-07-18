@@ -19,26 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
         window?.makeKeyAndVisible()
-        
-        let provider = MoyaProvider<Slack.ChatPostMessage>()
-        provider.request(Slack.ChatPostMessage(
+
+        let request = Slack.ChatPostMessage(
             token: "<YOUR_ACCESS_TOKEN>",
             channel: "channel_name",
             text: "Hello World!",
-            asUser: true)) { (result) in
-            switch result {
-            case let .success(response):
-                let jsonDecoder = JSONDecoder()
-                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
-                do {
-                    let messageResponse = try jsonDecoder.decode(MessageResponse.self, from: response.data)
-                    print(messageResponse)
-                } catch {
-                    print(error.localizedDescription)
-                }
-            case let .failure(error):
-                print(error)
+            asUser: true)
+        Api.shared.send(request) { (response, error) in
+            if let response = response {
+                print("response: \(response)")
+            }
+            if let error = error {
+                print("error: \(error)")
             }
         }
         

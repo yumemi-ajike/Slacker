@@ -8,7 +8,33 @@
 
 import Moya
 
+class Api {
+    static let shared = Api()
+
+    func send<Request: SlackApiTargetType>(_ request: Request, completion: @escaping (_ response: Request.Response?, _ error: Moya.MoyaError?) -> Void) -> Void {
+        let provider = MoyaProvider<MultiTarget>()
+        let target = MultiTarget(request)
+        provider.request(target) { (result) in
+            switch result {
+            case let .success(response):
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                do {
+                    let decodedResponse = try response.map(Request.Response.self, using: jsonDecoder, failsOnEmptyData: true)
+                    completion(decodedResponse, nil)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+}
+
 protocol SlackApiTargetType: TargetType {
+    associatedtype Response: Codable
 }
 
 extension SlackApiTargetType {
@@ -18,6 +44,7 @@ extension SlackApiTargetType {
 
 enum Slack {
     struct ChatPostMessage: SlackApiTargetType {
+        typealias Response = MessageResponse
         var path: String { return "/chat.postMessage" }
         var method: Method { return .post }
         var task: Task {
