@@ -16,6 +16,7 @@
 		084D432E20F9FE5F00EDF003 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D432B20F9FE5F00EDF003 /* Alamofire.framework */; };
 		084D433020F9FF9000EDF003 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D432F20F9FF9000EDF003 /* Api.swift */; };
 		084D433320FA148300EDF003 /* chatPostMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 084D433220FA148300EDF003 /* chatPostMessage.json */; };
+		6BDAB9C720FF0C26007DCEEA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDAB9C620FF0C26007DCEEA /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		084D432B20F9FE5F00EDF003 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		084D432F20F9FF9000EDF003 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		084D433220FA148300EDF003 /* chatPostMessage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chatPostMessage.json; sourceTree = "<group>"; };
+		6BDAB9C620FF0C26007DCEEA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				080D835D20F996090010D99E /* AppDelegate.swift */,
 				084D432F20F9FF9000EDF003 /* Api.swift */,
+				6BDAB9C620FF0C26007DCEEA /* Response.swift */,
 				080D836420F9960B0010D99E /* Assets.xcassets */,
 				080D836620F9960B0010D99E /* LaunchScreen.storyboard */,
 				080D836920F9960B0010D99E /* Info.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				084D433020F9FF9000EDF003 /* Api.swift in Sources */,
+				6BDAB9C720FF0C26007DCEEA /* Response.swift in Sources */,
 				080D835E20F996090010D99E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

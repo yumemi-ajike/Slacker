@@ -8,48 +8,35 @@
 
 import Moya
 
-enum Slack {
-    case chatPostMessage(token: String, channel: String, text: String, asUser: Bool)
+protocol SlackApiTargetType: TargetType {
 }
 
-extension Slack: TargetType {
+extension SlackApiTargetType {
     var baseURL: URL { return URL(string: "https://slack.com/api")! }
-    var path: String {
-        switch self {
-        case .chatPostMessage:
-            return "/chat.postMessage"
-        }
-    }
-    var method: Method {
-        switch self {
-        case .chatPostMessage:
-            return .post
-        }
-    }
-    var task: Task {
-        switch self {
-        case .chatPostMessage(let token, let channel, let text, let asUser):
+    var headers: [String : String]? { return nil }
+}
+
+enum Slack {
+    struct ChatPostMessage: SlackApiTargetType {
+        var path: String { return "/chat.postMessage" }
+        var method: Method { return .post }
+        var task: Task {
             return .requestParameters(parameters: ["token": token, "channel": channel, "text": text, "as_user": asUser], encoding: URLEncoding.default)
         }
+        var sampleData: Data {
+            let path = Bundle.main.path(forResource: "chatPostMessage", ofType: "json")!
+            return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
+        }
+        let token: String
+        let channel: String
+        let text: String
+        let asUser: Bool
+        
+        init(token: String, channel: String, text: String, asUser: Bool) {
+            self.token = token
+            self.channel = channel
+            self.text = text
+            self.asUser = asUser
+        }
     }
-    var headers: [String : String]? { return nil }
-    var sampleData: Data {
-        let path = Bundle.main.path(forResource: "chatPostMessage", ofType: "json")!
-        return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
-    }
-}
-
-struct PostMessageResponse: Codable {
-    let ok: Bool
-    let channel: String
-    let ts: String
-    let message: Message
-}
-
-struct Message: Codable {
-    let type: String
-    let user: String
-    let text: String
-    let botId: String
-    let ts: String
 }
