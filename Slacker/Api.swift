@@ -50,6 +50,6 @@ struct Message: Codable {
     let type: String
     let user: String
     let text: String
-    let bot_id: String
+    let botId: String
     let ts: String
 }

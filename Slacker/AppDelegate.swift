@@ -27,10 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             text: "hello world!",
             asUser: true)) { (result) in
             switch result {
-            case let .success(moyaResponse):
-                let json = try! moyaResponse.mapJSON()
-                let statusCode = moyaResponse.statusCode
-                print("json: \(json), statusCode: \(statusCode)")
+            case let .success(response):
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                do {
+                    let messageResponse = try jsonDecoder.decode(PostMessageResponse.self, from: response.data)
+                    print(messageResponse)
+                } catch {
+                    print(error.localizedDescription)
+                }
             case let .failure(error):
                 print(error)
             }
