@@ -66,4 +66,26 @@ enum Slack {
             self.asUser = asUser
         }
     }
+
+    struct OAuthAccess: SlackApiTargetType {
+        typealias Response = OAuthAccessResponse
+        var path: String { return "/oauth.access" }
+        var method: Method { return .post }
+        var task: Task {
+            return .requestParameters(parameters: ["client_id": clientId, "client_secret": clientSecret, "code": code], encoding: URLEncoding.default)
+        }
+        var sampleData: Data {
+            let path = Bundle.main.path(forResource: "oAuthAccess", ofType: "json")!
+            return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
+        }
+        let clientId: String
+        let clientSecret: String
+        let code: String
+
+        init(clientId: String, clientSecret: String, code: String) {
+            self.clientId = clientId
+            self.clientSecret = clientSecret
+            self.code = code
+        }
+    }
 }

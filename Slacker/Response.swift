@@ -22,3 +22,10 @@ struct Message: Codable {
     let botId: String
     let ts: String
 }
+
+struct OAuthAccessResponse: Codable {
+    let accessToken: String
+    let scope: String
+    let teamName: String
+    let teamId: String
+}

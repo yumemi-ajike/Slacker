@@ -17,23 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
         window?.makeKeyAndVisible()
-
-        let request = Slack.ChatPostMessage(
-            token: "<YOUR_ACCESS_TOKEN>",
-            channel: "channel_name",
-            text: "Hello World!",
-            asUser: true)
-        Api.shared.send(request) { (response, error) in
-            if let response = response {
-                print("response: \(response)")
-            }
-            if let error = error {
-                print("error: \(error)")
-            }
-        }
-        
         return true
     }
 

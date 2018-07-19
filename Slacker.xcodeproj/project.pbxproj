@@ -16,6 +16,13 @@
 		084D432E20F9FE5F00EDF003 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D432B20F9FE5F00EDF003 /* Alamofire.framework */; };
 		084D433020F9FF9000EDF003 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D432F20F9FF9000EDF003 /* Api.swift */; };
 		084D433320FA148300EDF003 /* chatPostMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 084D433220FA148300EDF003 /* chatPostMessage.json */; };
+		6B2545A52100494200E67F07 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545A42100494200E67F07 /* WebViewController.swift */; };
+		6B2545A721005CD000E67F07 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2545A621005CD000E67F07 /* SnapKit.framework */; };
+		6B2545A921005D6100E67F07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545A821005D6100E67F07 /* MainViewController.swift */; };
+		6B2545AC21005E9600E67F07 /* URLDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545AB21005E9600E67F07 /* URLDefinitions.swift */; };
+		6B2545AE2100624100E67F07 /* AppDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545AD2100624100E67F07 /* AppDefinitions.swift */; };
+		6B2545B0210062CE00E67F07 /* UserDefaultsDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545AF210062CE00E67F07 /* UserDefaultsDefinitions.swift */; };
+		6B2545B32100665100E67F07 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2545B22100665100E67F07 /* URL+Extension.swift */; };
 		6BDAB9C720FF0C26007DCEEA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDAB9C620FF0C26007DCEEA /* Response.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +50,13 @@
 		084D432B20F9FE5F00EDF003 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		084D432F20F9FF9000EDF003 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		084D433220FA148300EDF003 /* chatPostMessage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chatPostMessage.json; sourceTree = "<group>"; };
+		6B2545A42100494200E67F07 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		6B2545A621005CD000E67F07 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		6B2545A821005D6100E67F07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6B2545AB21005E9600E67F07 /* URLDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDefinitions.swift; sourceTree = "<group>"; };
+		6B2545AD2100624100E67F07 /* AppDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefinitions.swift; sourceTree = "<group>"; };
+		6B2545AF210062CE00E67F07 /* UserDefaultsDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDefinitions.swift; sourceTree = "<group>"; };
+		6B2545B22100665100E67F07 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		6BDAB9C620FF0C26007DCEEA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2545A721005CD000E67F07 /* SnapKit.framework in Frameworks */,
 				084D432C20F9FE5F00EDF003 /* Result.framework in Frameworks */,
 				084D432D20F9FE5F00EDF003 /* Moya.framework in Frameworks */,
 				084D432E20F9FE5F00EDF003 /* Alamofire.framework in Frameworks */,
@@ -92,6 +107,10 @@
 				080D835D20F996090010D99E /* AppDelegate.swift */,
 				084D432F20F9FF9000EDF003 /* Api.swift */,
 				6BDAB9C620FF0C26007DCEEA /* Response.swift */,
+				6B2545A821005D6100E67F07 /* MainViewController.swift */,
+				6B2545A42100494200E67F07 /* WebViewController.swift */,
+				6B2545B12100662C00E67F07 /* Extensions */,
+				6B2545AA21005E8200E67F07 /* Configs */,
 				080D836420F9960B0010D99E /* Assets.xcassets */,
 				080D836620F9960B0010D99E /* LaunchScreen.storyboard */,
 				080D836920F9960B0010D99E /* Info.plist */,
@@ -112,6 +131,7 @@
 		084D432820F9FE5F00EDF003 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B2545A621005CD000E67F07 /* SnapKit.framework */,
 				084D432B20F9FE5F00EDF003 /* Alamofire.framework */,
 				084D432A20F9FE5F00EDF003 /* Moya.framework */,
 				084D432920F9FE5F00EDF003 /* Result.framework */,
@@ -125,6 +145,24 @@
 				084D433220FA148300EDF003 /* chatPostMessage.json */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		6B2545AA21005E8200E67F07 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				6B2545AD2100624100E67F07 /* AppDefinitions.swift */,
+				6B2545AB21005E9600E67F07 /* URLDefinitions.swift */,
+				6B2545AF210062CE00E67F07 /* UserDefaultsDefinitions.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		6B2545B12100662C00E67F07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6B2545B22100665100E67F07 /* URL+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +272,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -251,7 +290,13 @@
 			files = (
 				084D433020F9FF9000EDF003 /* Api.swift in Sources */,
 				6BDAB9C720FF0C26007DCEEA /* Response.swift in Sources */,
+				6B2545AC21005E9600E67F07 /* URLDefinitions.swift in Sources */,
+				6B2545B0210062CE00E67F07 /* UserDefaultsDefinitions.swift in Sources */,
 				080D835E20F996090010D99E /* AppDelegate.swift in Sources */,
+				6B2545B32100665100E67F07 /* URL+Extension.swift in Sources */,
+				6B2545A52100494200E67F07 /* WebViewController.swift in Sources */,
+				6B2545A921005D6100E67F07 /* MainViewController.swift in Sources */,
+				6B2545AE2100624100E67F07 /* AppDefinitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
