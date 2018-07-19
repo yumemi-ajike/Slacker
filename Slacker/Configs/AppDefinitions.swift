@@ -10,8 +10,8 @@ import Foundation
 
 extension String {
     struct app {
-        static let clientId = "2388867539.398394921924"
-        static let clientSecret = "b58676dd1edb645da46b20ff746b6530"
-        static let scope = "chat:write:user"
+        static let clientId = "<APP_CLIENT_ID>"
+        static let clientSecret = "<APP_CLIENT_SECRET>"
+        static let scope = "channels:read,chat:write:user,groups:read"
     }
 }

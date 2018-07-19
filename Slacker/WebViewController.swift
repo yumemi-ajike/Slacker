@@ -53,7 +53,7 @@ extension WebViewController: WKNavigationDelegate {
         if url.hasPrefix(URL.authentication.redirectUrl) {
             if let code = url.queryItem(for: "code") as? String {
                 let request = Slack.OAuthAccess(clientId: String.app.clientId, clientSecret: String.app.clientSecret, code: code)
-                Api.shared.send(request) { [weak self](response, error) in
+                Api.shared.send(request) { [weak self] (response, error) in
                     if let response = response {
                         print("response: \(response)")
                         UserDefaults.accessToken = response.accessToken

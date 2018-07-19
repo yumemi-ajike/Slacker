@@ -88,4 +88,40 @@ enum Slack {
             self.code = code
         }
     }
+
+    struct ChannelsList: SlackApiTargetType {
+        typealias Response = ChannelsListResponse
+        var path: String { return "/channels.list" }
+        var method: Method { return .get }
+        var task: Task {
+            return .requestParameters(parameters: ["token": token], encoding: URLEncoding.default)
+        }
+        var sampleData: Data {
+            let path = Bundle.main.path(forResource: "channelsList", ofType: "json")!
+            return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
+        }
+        let token: String
+
+        init(token: String) {
+            self.token = token
+        }
+    }
+
+    struct GroupsList: SlackApiTargetType {
+        typealias Response = GroupsListResponse
+        var path: String { return "/groups.list" }
+        var method: Method { return .get }
+        var task: Task {
+            return .requestParameters(parameters: ["token": token], encoding: URLEncoding.default)
+        }
+        var sampleData: Data {
+            let path = Bundle.main.path(forResource: "groupsList", ofType: "json")!
+            return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
+        }
+        let token: String
+        
+        init(token: String) {
+            self.token = token
+        }
+    }
 }

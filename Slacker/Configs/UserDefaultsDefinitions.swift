@@ -9,12 +9,21 @@
 import Foundation
 
 extension UserDefaults {
-    static var accessToken: String? {
+    static var accessToken: String {
         get {
-            return UserDefaults.standard.object(forKey: "accessToken") as? String
+            return UserDefaults.standard.object(forKey: "accessToken") as? String ?? ""
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "accessToken")
+        }
+    }
+
+    static var channelIds: [String] {
+        get {
+            return UserDefaults.standard.object(forKey: "channelIds") as? [String] ?? []
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "channelIds")
         }
     }
 }
