@@ -23,6 +23,7 @@ class ChannelsViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "group")
 
         selectedChannelIds = UserDefaults.channelIds
+        title = "\(selectedChannelIds.count) channels"
 
         channels.removeAll()
         sections = [.channels, .groups]
@@ -105,5 +106,6 @@ class ChannelsViewController: UITableViewController {
             }
         }
         UserDefaults.channelIds = selectedChannelIds
+        title = "\(selectedChannelIds.count) channels"
     }
 }
